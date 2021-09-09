@@ -1,0 +1,55 @@
+<div class="container">
+  <h4 class="center">Agregar Tareas</h4>
+  <br>
+  <form [formGroup]="taskFormGroup"(ngSubmit)="onSubmit()">
+      
+      <div class="form-group">
+        <input type="text" formControlName="title" class="form-control" placeholder="Titulo">
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <input type="number" formControlName="code" class="form-control" placeholder="Código" >
+      </div>
+      <br/>
+      <div>
+        <label>Fecha Inicio</label>
+        <input type="date"formControlName="startDate" class="form-control">
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label>Fecha Fin</label>
+        <input type="date"formControlName="endDate" class="form-control">
+      </div>
+      <br>
+
+      <div class="form-group">
+        <select formControlName="status" class="form-control">
+          <option value="0">Status</option>
+          <option *ngFor="let taskState of taskStatus">{{taskState}}</option>
+        </select>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <input type="text"formControlName="hashtags" placeholder="Hashtags" class="form-control">
+      </div>
+      <br>
+
+      <div class="form-group">
+        <select formControlName="priority" class="form-control">
+          <option value="0">Prioridad</option>
+          <option *ngFor="let taskPriorities of taskPriority">{{taskPriorities}}</option>
+        </select>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <input type="number" formControlName="complexLevel" placeholder="Complejidad" class="form-control">
+      </div>
+      <br>
+      <button class="btn btn-primary btn-lg btn-block center">Agregar</button>
+  </form>
+</div>
+
